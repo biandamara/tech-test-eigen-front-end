@@ -2,16 +2,16 @@
 
 ## Front-End Challenge
 
-[x] Create a List and Detail view for article from NewsAPI
-[x] it should use React
-[x] it should use TypeScript
-[x] it should use Ant Design for styling (you can customize the UI if you are interesting with UI/UX)
-[x] it should be open sourced on your github repo
+- [x] Create a List and Detail view for article from NewsAPI
+- [x] it should use React
+- [x] it should use TypeScript
+- [x] it should use Ant Design for styling (you can customize the UI if you are interesting with UI/UX)
+- [x] it should be open sourced on your github repo
 
 ## Extras
 
-[ ] Test your components with jest
-[x] it should use Clean Architecture as design pattern
+- [ ] Test your components with jest
+- [x] it should use Clean Architecture as design pattern
 
 ## Available Scripts
 
