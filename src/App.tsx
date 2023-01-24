@@ -31,15 +31,15 @@ const News: React.FC = () => {
       renderItem={(item) => (
         <List.Item>
           <Typography.Text strong>{item.title}</Typography.Text> <br />
-          <Typography.Text>By {item.author}</Typography.Text> <br />
+          <Typography.Text>By</Typography.Text>{" "}
+          <Typography.Text strong>{item.author}</Typography.Text> {" | "}
           <Typography.Text>Published {item.publishedAt}</Typography.Text> <br />
           <Image src={item.urlToImage} width={200} /> <br />
           <Typography.Text type="secondary">
             {item.description}
           </Typography.Text>{" "}
-          <br />
           <Link href={item.url} target="_blank">
-            Read more...
+            [read more]
           </Link>
         </List.Item>
       )}
