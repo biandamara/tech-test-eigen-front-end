@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { List, Typography, Image } from "antd";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface Article {
+  title: string;
+  author: string;
+  url: string;
+  urlToImage: string;
+  description: string;
+  publishedAt: string;
 }
 
-export default App;
+const News: React.FC = () => {
+  const [articles, setArticles] = useState<Article[]>([]);
+
+  const { Link } = Typography;
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://newsapi.org/v2/everything?q=apple&from=2023-01-23&to=2023-01-23&sortBy=popularity&apiKey=7442bf5ddf3741ca9fb9ff0ed160581d`
+      )
+      .then((response) => setArticles(response.data.articles))
+      .catch((error) => console.log(error));
+  }, []);
+
+  return (
+    <List
+      dataSource={articles}
+      renderItem={(item) => (
+        <List.Item>
+          <Typography.Text strong>{item.title}</Typography.Text> <br />
+          <Typography.Text>By {item.author}</Typography.Text> <br />
+          <Typography.Text>Published {item.publishedAt}</Typography.Text> <br />
+          <Image src={item.urlToImage} width={200} /> <br />
+          <Typography.Text type="secondary">
+            {item.description}
+          </Typography.Text>{" "}
+          <br />
+          <Link href={item.url} target="_blank">
+            Read more...
+          </Link>
+        </List.Item>
+      )}
+    />
+  );
+};
+
+export default News;
