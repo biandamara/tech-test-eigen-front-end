@@ -13,7 +13,7 @@ interface Article {
   url: string;
 }
 
-const API_KEY = "7442bf5ddf3741ca9fb9ff0ed160581d";
+const API_KEY = "5fd964901d354f33ac848b11445226f1";
 const API_URL = `https://newsapi.org/v2/everything?q=apple&from=2023-01-23&to=2023-01-23&sortBy=popularity&apiKey=${API_KEY}`;
 
 const App: React.FC = () => {
