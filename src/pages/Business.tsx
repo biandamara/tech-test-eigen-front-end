@@ -19,15 +19,14 @@ interface Article {
   url: string;
 }
 
-const API_KEY = "5fd964901d354f33ac848b11445226f1";
-const API_URL = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${API_KEY}`;
-
 const Business: React.FC = () => {
   const [data, setData] = useState<Article[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(API_URL);
+      const result = await axios.get(
+        "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=5fd964901d354f33ac848b11445226f1"
+      );
       setData(result.data.articles);
     };
     fetchData();

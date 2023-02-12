@@ -47,6 +47,7 @@ const Navigation: React.FC = () => {
         alt=""
         style={{ height: "10rem" }}
       />
+      {/* navigation bar - start */}
       <Menu
         onClick={onClick}
         selectedKeys={[current]}
@@ -54,6 +55,7 @@ const Navigation: React.FC = () => {
         items={items}
         style={{ backgroundColor: "#f7f7f7" }}
       />
+      {/* navigation bar - emd */}
     </>
   );
 };

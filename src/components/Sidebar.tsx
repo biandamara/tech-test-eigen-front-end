@@ -18,19 +18,19 @@ const News: React.FC = () => {
     const fetchData = async () => {
       const [data1, data2, data3, data4, data5] = await Promise.all([
         axios.get(
-          "https://newsapi.org/v2/everything?q=apple&from=2023-02-11&to=2023-02-11&sortBy=popularity&apiKey=7442bf5ddf3741ca9fb9ff0ed160581d"
+          "https://newsapi.org/v2/everything?q=apple&from=2023-02-11&to=2023-02-11&sortBy=popularity&apiKey=5fd964901d354f33ac848b11445226f1"
         ),
         axios.get(
-          "https://newsapi.org/v2/everything?q=tesla&from=2023-01-12&sortBy=publishedAt&apiKey=7442bf5ddf3741ca9fb9ff0ed160581d"
+          "https://newsapi.org/v2/everything?q=tesla&from=2023-01-12&sortBy=publishedAt&apiKey=5fd964901d354f33ac848b11445226f1"
         ),
         axios.get(
-          "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=7442bf5ddf3741ca9fb9ff0ed160581d"
+          "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=5fd964901d354f33ac848b11445226f1"
         ),
         axios.get(
-          "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=7442bf5ddf3741ca9fb9ff0ed160581d"
+          "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=5fd964901d354f33ac848b11445226f1"
         ),
         axios.get(
-          "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=7442bf5ddf3741ca9fb9ff0ed160581d"
+          "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=5fd964901d354f33ac848b11445226f1"
         ),
       ]);
 

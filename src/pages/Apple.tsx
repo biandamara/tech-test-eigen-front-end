@@ -19,15 +19,14 @@ interface Article {
   url: string;
 }
 
-const API_KEY = "5fd964901d354f33ac848b11445226f1";
-const API_URL = `https://newsapi.org/v2/everything?q=apple&from=2023-01-23&to=2023-01-23&sortBy=popularity&apiKey=${API_KEY}`;
-
 const Apple: React.FC = () => {
   const [data, setData] = useState<Article[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(API_URL);
+      const result = await axios.get(
+        "https://newsapi.org/v2/everything?q=apple&from=2023-01-23&to=2023-01-23&sortBy=popularity&apiKey=5fd964901d354f33ac848b11445226f1"
+      );
       setData(result.data.articles);
     };
     fetchData();
