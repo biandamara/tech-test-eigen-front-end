@@ -5,6 +5,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import pages
 import Home from "./pages/Home";
 import Apple from "./pages/Apple";
+import Tesla from "./pages/Tesla";
+import Business from "./pages/Business";
+import TechCrunch from "./pages/TechCrunch";
+import WallStreetJournal from "./pages/WallStreetJournal";
 
 // import styles
 import "./assets/styles/Index.css";
@@ -19,6 +23,10 @@ root.render(
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/apple" element={<Apple />} />
+      <Route path="/tesla" element={<Tesla />} />
+      <Route path="/business" element={<Business />} />
+      <Route path="/techcrunch" element={<TechCrunch />} />
+      <Route path="/wallstreetjournal" element={<WallStreetJournal />} />
     </Routes>
   </BrowserRouter>
 );

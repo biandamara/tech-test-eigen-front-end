@@ -1,35 +1,38 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+
+// import ant design
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
 
 const items: MenuProps["items"] = [
   {
-    label: "Home",
+    label: <NavLink to="/">Home</NavLink>,
     key: "home",
   },
   {
-    label: "Apple",
+    label: <NavLink to="/apple">Apple</NavLink>,
     key: "apple",
   },
   {
-    label: "Tesla",
+    label: <NavLink to="/tesla">Tesla</NavLink>,
     key: "tesla",
   },
   {
-    label: "Business",
+    label: <NavLink to="/business">Business</NavLink>,
     key: "business",
   },
   {
-    label: "TechCrunch",
+    label: <NavLink to="/techcrunch">TechCrunch</NavLink>,
     key: "techcrunch",
   },
   {
-    label: "Wall Street Journal",
+    label: <NavLink to="/wallstreetjournal">Wall Street Journal</NavLink>,
     key: "wallstreetjournal",
   },
 ];
 
-const App: React.FC = () => {
+const Navigation: React.FC = () => {
   const [current, setCurrent] = useState("home");
 
   const onClick: MenuProps["onClick"] = (e) => {
@@ -38,14 +41,21 @@ const App: React.FC = () => {
   };
 
   return (
-    <Menu
-      onClick={onClick}
-      selectedKeys={[current]}
-      mode="horizontal"
-      items={items}
-      style={{ backgroundColor: "#f7f7f7" }}
-    />
+    <>
+      <img
+        src="https://lh3.googleusercontent.com/p/AF1QipPneq6pLLAg2INNSYuQvdQvs4Bj_Snm2K40vSFP=s1360-w1360-h1020"
+        alt=""
+        style={{ height: "10rem" }}
+      />
+      <Menu
+        onClick={onClick}
+        selectedKeys={[current]}
+        mode="horizontal"
+        items={items}
+        style={{ backgroundColor: "#f7f7f7" }}
+      />
+    </>
   );
 };
 
-export default App;
+export default Navigation;

@@ -2,42 +2,41 @@ import React from "react";
 
 // import components
 import Navigation from "../components/Navigation";
-import Apple from "../components/Apple";
-import Tesla from "../components/Tesla";
-import Business from "../components/Business";
+import Card from "../components/Carousel";
+import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 
-function Home() {
-  return (
-    <body>
-      {/* header - start */}
-      <img
-        src="https://lh3.googleusercontent.com/p/AF1QipPneq6pLLAg2INNSYuQvdQvs4Bj_Snm2K40vSFP=s1360-w1360-h1020"
-        alt=""
-        style={{ height: "10rem" }}
-      />
-      <Navigation />
-      {/* header - end */}
+// import ant design
+import { Col, Row } from "antd";
 
-      {/* content - start */}
-      <div>
-        {/* apple news - start */}
-        <Apple />
-        <Tesla />
-        <Business />
-        {/* apple news - end */}
-      </div>
-      {/* content - end */}
+const Home: React.FC = () => (
+  <>
+    {/* header - start */}
+    <Navigation />
+    {/* header - end */}
 
-      {/* sidebar - start */}
-      <div></div>
-      {/* sidebar - end */}
+    {/* content - start */}
+    <div>
+      <Row>
+        {/* news - start */}
+        <Col span={18}>
+          <Card />
+          {/* news - end */}
+        </Col>
 
-      {/* footer - start */}
-      <Footer />
-      {/* footer - end */}
-    </body>
-  );
-}
+        {/* sidebar - start */}
+        <Col span={6}>
+          <Sidebar />
+        </Col>
+        {/* sidebar - end */}
+      </Row>
+    </div>
+    {/* content - end */}
+
+    {/* footer - start */}
+    <Footer />
+    {/* footer - end */}
+  </>
+);
 
 export default Home;

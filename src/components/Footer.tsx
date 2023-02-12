@@ -1,7 +1,9 @@
 import React from "react";
+
+// import ant design
 import { Col, Row } from "antd";
 
-const App: React.FC = () => (
+const Footer: React.FC = () => (
   <>
     <Row>
       <Col span={12}>
@@ -22,4 +24,4 @@ const App: React.FC = () => (
   </>
 );
 
-export default App;
+export default Footer;

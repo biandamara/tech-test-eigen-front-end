@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+
+// import components
+import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
+
+// import ant design
 import { Typography, Card, List, Space, Row } from "antd";
-const { Title, Text } = Typography;
+const { Text } = Typography;
 
 interface Article {
   title: string;
@@ -16,7 +22,7 @@ interface Article {
 const API_KEY = "5fd964901d354f33ac848b11445226f1";
 const API_URL = `https://newsapi.org/v2/everything?q=apple&from=2023-01-23&to=2023-01-23&sortBy=popularity&apiKey=${API_KEY}`;
 
-const App: React.FC = () => {
+const Apple: React.FC = () => {
   const [data, setData] = useState<Article[]>([]);
 
   useEffect(() => {
@@ -28,10 +34,8 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <Title style={{ marginTop: "30px", textAlign: "center" }}>
-        Eigen News
-      </Title>
+    <>
+      <Navigation />
       <List
         loading={false}
         style={{ marginBottom: "30px" }}
@@ -71,8 +75,9 @@ const App: React.FC = () => {
           </Row>
         )}
       />
-    </div>
+      <Footer />
+    </>
   );
 };
 
-export default App;
+export default Apple;

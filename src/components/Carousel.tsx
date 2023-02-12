@@ -2,17 +2,25 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 // import ant design
-import { Typography, List } from "antd";
-const { Title } = Typography;
+import { Carousel } from "antd";
 
 interface Article {
   title: string;
   url: string;
   urlToImage: string;
+  description: string;
 }
 
-const News: React.FC = () => {
+const App: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
+
+  const contentStyle: React.CSSProperties = {
+    objectFit: "cover",
+    objectPosition: "center",
+    height: "40rem",
+    width: "100%",
+    borderRadius: "15px",
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,32 +55,22 @@ const News: React.FC = () => {
   }, []);
 
   return (
-    <body>
-      <Title level={4}>Popular</Title>
-      <List
-        itemLayout="horizontal"
-        dataSource={articles.slice(0, 5)}
-        renderItem={(item) => (
-          <List.Item>
-            <List.Item.Meta
-              style={{
-                alignItems: "center",
-              }}
-              avatar={
-                <img
-                  width={100}
-                  alt="logo"
-                  src={item.urlToImage}
-                  style={{ borderRadius: "5px" }}
-                />
-              }
-              title={<a href={item.url}>{item.title}</a>}
+    <Carousel autoplay style={{ margin: "1rem" }}>
+      {articles.map((article, index) => (
+        <div key={index}>
+          <a href={article.url} style={{ color: "black" }}>
+            <img
+              src={article.urlToImage}
+              alt={article.title}
+              style={contentStyle}
             />
-          </List.Item>
-        )}
-      />
-    </body>
+            <h2>{article.title}</h2>
+            <p>{article.description}</p>
+          </a>
+        </div>
+      ))}
+    </Carousel>
   );
 };
 
-export default News;
+export default App;
