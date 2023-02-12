@@ -11,7 +11,7 @@ interface Article {
   description: string;
 }
 
-const App: React.FC = () => {
+const Hero: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
 
   const contentStyle: React.CSSProperties = {
@@ -73,4 +73,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default Hero;

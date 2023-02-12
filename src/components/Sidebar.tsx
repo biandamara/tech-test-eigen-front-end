@@ -11,7 +11,7 @@ interface Article {
   urlToImage: string;
 }
 
-const News: React.FC = () => {
+const Sidebar: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const News: React.FC = () => {
   }, []);
 
   return (
-    <body>
+    <>
       <Title level={4}>Popular</Title>
       <List
         itemLayout="horizontal"
@@ -71,8 +71,8 @@ const News: React.FC = () => {
           </List.Item>
         )}
       />
-    </body>
+    </>
   );
 };
 
-export default News;
+export default Sidebar;

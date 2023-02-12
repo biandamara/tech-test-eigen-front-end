@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 
 // import ant design
 import { Typography, Card, List, Space, Row } from "antd";
-const { Text } = Typography;
+const { Title, Text } = Typography;
 
 interface Article {
   title: string;
@@ -34,7 +34,18 @@ const TechCrunch: React.FC = () => {
 
   return (
     <>
+      {/* header - start */}
       <Navigation />
+      {/* header - end */}
+
+      {/* section - start */}
+      {/* title - start */}
+      <Title style={{ display: "flex", justifyContent: "center" }}>
+        TechCrunch
+      </Title>
+      {/* title - end */}
+
+      {/* news list - start */}
       <List
         loading={false}
         style={{ marginBottom: "30px" }}
@@ -45,6 +56,7 @@ const TechCrunch: React.FC = () => {
             console.log(page);
           },
           pageSizeOptions: [10, 20, 50, 100],
+          style: { display: "flex", justifyContent: "center" },
         }}
         dataSource={data}
         renderItem={(item) => (
@@ -74,7 +86,12 @@ const TechCrunch: React.FC = () => {
           </Row>
         )}
       />
+      {/* news list - end */}
+      {/* section - end */}
+
+      {/* header - start */}
       <Footer />
+      {/* header - end */}
     </>
   );
 };

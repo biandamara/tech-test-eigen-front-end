@@ -15,7 +15,7 @@ const Home: React.FC = () => (
     <Navigation />
     {/* header - end */}
 
-    {/* content - start */}
+    {/* section - start */}
     <div>
       <Row>
         {/* news - start */}
@@ -31,7 +31,7 @@ const Home: React.FC = () => (
         {/* sidebar - end */}
       </Row>
     </div>
-    {/* content - end */}
+    {/* section - end */}
 
     {/* footer - start */}
     <Footer />

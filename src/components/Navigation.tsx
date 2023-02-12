@@ -42,11 +42,14 @@ const Navigation: React.FC = () => {
 
   return (
     <>
+      {/* logo - start */}
       <img
         src="https://lh3.googleusercontent.com/p/AF1QipPneq6pLLAg2INNSYuQvdQvs4Bj_Snm2K40vSFP=s1360-w1360-h1020"
         alt=""
         style={{ height: "10rem" }}
       />
+      {/* logo - end */}
+
       {/* navigation bar - start */}
       <Menu
         onClick={onClick}
